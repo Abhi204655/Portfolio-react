@@ -1,4 +1,7 @@
 import "./App.css";
+import { Navbar } from "./components";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -20,9 +23,16 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">hello</div>
-    </ThemeProvider>
+    <>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <div className="main">
+          <div className="container">
+            <Navbar />
+          </div>
+        </div>
+      </ThemeProvider>
+    </>
   );
 }
 
