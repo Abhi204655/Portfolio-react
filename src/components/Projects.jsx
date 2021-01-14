@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CodeStock from "../assets/Projects/codestock.png";
 import RecipeHunt from "../assets/Projects/recipeHunt.png";
 import TypingGame from "../assets/Projects/typingGame.png";
+import { useHistory, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -88,10 +89,37 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  viewall: {
+    width: "300px",
+    lineHeight: "40px",
+    background: theme.palette.secondary.main,
+    outline: "none",
+    color: theme.palette.primary.main,
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1em",
+    fontWeight: "600 !important",
+    border: `1px solid ${theme.palette.secondary.main} !important`,
+    margin: "auto",
+    marginTop: "3em",
+    "&:hover": {
+      background: "none",
+      color: theme.palette.white.main,
+      transition: ".4s",
+      border: `1px solid ${theme.palette.gray.main} !important`,
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+  },
 }));
 
 const Projects = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const location = useLocation();
   return (
     <div className={classes.section}>
       <div className={classes.header}>
@@ -214,6 +242,17 @@ const Projects = () => {
             </a>
           </div>
         </div>
+        {location.pathname === "/" && (
+          <button
+            className={classes.viewall}
+            onClick={() => {
+              history.push("/projects");
+              window.scrollTo(0, 0);
+            }}
+          >
+            VIEW ALL PROJECTS
+          </button>
+        )}
       </div>
     </div>
   );
