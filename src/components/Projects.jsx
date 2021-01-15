@@ -4,6 +4,9 @@ import CodeStock from "../assets/Projects/codestock.png";
 import RecipeHunt from "../assets/Projects/recipeHunt.png";
 import TypingGame from "../assets/Projects/typingGame.png";
 import { useHistory, useLocation } from "react-router-dom";
+import { CgArrowLongRight } from "react-icons/cg";
+import { AiFillGithub } from "react-icons/ai";
+import { FaFirefoxBrowser } from "react-icons/fa";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -80,6 +83,10 @@ const useStyles = makeStyles((theme) => ({
     "& a": {
       color: theme.palette.white.main,
       textDecoration: "none",
+      display: "flex",
+      alignItems: "center",
+      gap: "0.5em",
+      justifyContent: "center",
       background: "#212121",
       width: "200px",
       padding: "0.6em 3em",
@@ -154,13 +161,14 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Github Link
+              <AiFillGithub size={20} /> Github Link
             </a>
             <a
               href="http://codestockide.herokuapp.com/"
               target="_blank"
               rel="noreferrer"
             >
+              <FaFirefoxBrowser size={17} />
               Live Link
             </a>
           </div>
@@ -192,6 +200,7 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
+              <AiFillGithub size={20} />
               Github Link
             </a>
             <a
@@ -199,6 +208,7 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
+              <FaFirefoxBrowser size={17} />
               Live Link
             </a>
           </div>
@@ -231,6 +241,7 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
+              <AiFillGithub size={20} />
               Github Link
             </a>
             <a
@@ -238,6 +249,7 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
             >
+              <FaFirefoxBrowser size={17} />
               Live Link
             </a>
           </div>
@@ -251,6 +263,7 @@ const Projects = () => {
             }}
           >
             VIEW ALL PROJECTS
+            <CgArrowLongRight size={23} />
           </button>
         )}
       </div>

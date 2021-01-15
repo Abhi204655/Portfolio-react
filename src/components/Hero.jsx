@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { saveAs } from "file-saver";
 import Resume from "../assets/Abhi-Resume.pdf";
+import { CgArrowLongRight } from "react-icons/cg";
+import { AiOutlineDownload } from "react-icons/ai";
 
 // import { useProgressiveImg } from "../hooks";
 
@@ -144,10 +146,11 @@ const Hero = () => {
             className={classes.outlined}
             onClick={() => downloadResume()}
           >
-            DOWNLOAD
+            DOWNLOAD RESUME <AiOutlineDownload />
           </button>
           <button type="button" onClick={() => history.push("/projects")}>
             VIEW PROJECTS
+            <CgArrowLongRight />
           </button>
         </div>
       </div>
