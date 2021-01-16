@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   desc: {
     paddingBottom: "3em",
+    color: theme.palette.gray.main,
   },
   tags: {
     display: "flex",
@@ -147,13 +148,15 @@ const Projects = () => {
             <span>Scss</span>
           </div>
           <p className={classes.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus aliquam eaque voluptate doloremque at culpa iste
-            perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
-            pariatur ad laudantium. Neque odit iure provident maxime distinctio
-            vitae velit laudantium nihil. Culpa praesentium numquam quasi
-            cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate.
+            <CgArrowLongRight /> Online Code Editor where one can compile in
+            several languages like Python, C, C++, C#, etc. <br />
+            <CgArrowLongRight /> Used CodeMirror for syntax highlighting and
+            basic UI, Noty for notification, HackerEarth Compiler API, AntDesign
+            for UI.
+            <br />
+            <CgArrowLongRight /> Client-side file creation and downloading. used
+            local storage to store the user's preferred language, session
+            storage to store the written code.
           </p>
           <div className={classes.links}>
             <a
@@ -227,13 +230,9 @@ const Projects = () => {
             <span>Edamam Api</span>
           </div>
           <p className={classes.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus aliquam eaque voluptate doloremque at culpa iste
-            perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
-            pariatur ad laudantium. Neque odit iure provident maxime distinctio
-            vitae velit laudantium nihil. Culpa praesentium numquam quasi
-            cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate.
+            <CgArrowLongRight /> React PWA and search engine where you can
+            search for different Recipes by recipe name/type/ingredient which is
+            powered by Edamam Recipe API.
           </p>
           <div className={classes.links}>
             <a

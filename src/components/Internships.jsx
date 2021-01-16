@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Decartem from "../assets/InternshipImages/decartem.png";
 import HashBinary from "../assets/InternshipImages/hashBinary.png";
+import { CgArrowLongRight } from "react-icons/cg";
+import CarnotLogo from "../assets/CompanyLogos/carnot-logo.png";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -34,8 +36,22 @@ const useStyles = makeStyles((theme) => ({
   companyImage: {
     width: "100%",
     height: "auto",
-    "& > img": {
+    "& > a": {
       width: "100%",
+      textDecoration: "none",
+      "& > img": {
+        width: "100%",
+      },
+    },
+  },
+  carnotImage: {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: theme.palette.white.main,
+    "& > img": {
+      width: "50%",
     },
   },
   companyDisc: {
@@ -61,6 +77,10 @@ const useStyles = makeStyles((theme) => ({
   },
   desc: {
     paddingBottom: "3em",
+    color: theme.palette.gray.main,
+  },
+  role: {
+    color: theme.palette.secondary.main,
   },
 }));
 
@@ -74,11 +94,18 @@ const Internships = () => {
       </div>
       <div className={classes.internship}>
         <div className={classes.companyImage}>
-          <img src={Decartem} alt="decartem" />
+          <a href="http://www.carnot.co.in/" target="_blank" rel="noreferrer">
+            <div className={classes.carnotImage}>
+              <img src={CarnotLogo} alt="carnot" />
+            </div>
+          </a>
         </div>
         <div className={classes.companyDisc}>
           <h1>Carnot Technologies</h1>
-          <p className={classes.time}>Oct 2020 - Present | Full Stack Intern</p>
+          <p className={classes.time}>
+            Oct 2020 - Present |{" "}
+            <span className={classes.role}>Full Stack Intern</span>
+          </p>
           <p className={classes.desc}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus aliquam eaque voluptate doloremque at culpa iste
@@ -92,41 +119,57 @@ const Internships = () => {
       </div>
       <div className={classes.internship}>
         <div className={classes.companyImage}>
-          <img src={HashBinary} alt="decartem" />
+          <a href="https://hashbinary.com/" target="_blank" rel="noreferrer">
+            <img src={HashBinary} alt="decartem" />
+          </a>
         </div>
         <div className={classes.companyDisc}>
           <h1>Hashbinary Services LLP</h1>
           <p className={classes.time}>
-            Aug 2020 - Oct 2020 | MERN Stack Developer
+            Aug 2020 - Oct 2020 |
+            <span className={classes.role}>MERN Stack Developer</span>
           </p>
           <p className={classes.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Hashbinary, with headquarters in Mumbai, India, designs and develops
+            software solutions for your business.
+            <br />
+            <CgArrowLongRight /> Worked on their FastBuild Project and
+            implemented RBAC(Role- Based Authentication) and complex parsing of
+            excel to JSON to store them efficiently in MongoDB models.
+            <br />
+            <CgArrowLongRight /> Worked on their Concorde Project and built APIs
+            used for the tracking and analysis of the user's behaviour with the
+            Router.
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Voluptatibus aliquam eaque voluptate doloremque at culpa iste
             perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
             pariatur ad laudantium. Neque odit iure provident maxime distinctio
             vitae velit laudantium nihil. Culpa praesentium numquam quasi
             cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate.
+            voluptate. */}
           </p>
         </div>
       </div>
       <div className={classes.internship}>
         <div className={classes.companyImage}>
-          <img src={Decartem} alt="decartem" />
+          <a href="https://decartem.com/" target="_blank" rel="noreferrer">
+            <img src={Decartem} alt="decartem" />
+          </a>
         </div>
         <div className={classes.companyDisc}>
           <h1>Decartem</h1>
           <p className={classes.time}>
-            Apr 2020 - Aug 2020 | Full Stack Developer
+            Apr 2020 - Aug 2020 |
+            <span className={classes.role}>Full Stack Developer</span>
           </p>
           <p className={classes.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus aliquam eaque voluptate doloremque at culpa iste
-            perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
-            pariatur ad laudantium. Neque odit iure provident maxime distinctio
-            vitae velit laudantium nihil. Culpa praesentium numquam quasi
-            cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate.
+            We help you create and manage all you projects including team and
+            company wide managements.
+            <br />
+            <CgArrowLongRight /> Made the dashboard using Materalize CSS for
+            their school ERP (Virtuo). Used different libraries like
+            FullCalendar.js for the implementation of the students' calendar and
+            later worked with the backed team in Django
           </p>
         </div>
       </div>
