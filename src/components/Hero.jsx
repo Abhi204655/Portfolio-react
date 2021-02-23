@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
 const Hero = () => {
   const classes = useStyles();
   const history = useHistory();
-  const [src, { blur }] = useProgressiveImg(ProfileTiny, ProfileBig);
+  const [src, blur] = useProgressiveImg(ProfileTiny, ProfileBig);
 
   const downloadResume = () => {
     let filename = "Abhi-Resume.pdf";

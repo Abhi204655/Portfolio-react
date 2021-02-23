@@ -13,6 +13,6 @@ export const useProgressiveImg = (lowQualitySrc, highQualitySrc) => {
       setSrc(highQualitySrc);
     };
   }, [lowQualitySrc, highQualitySrc]);
-
-  return [src, { blur: src === lowQualitySrc }];
+  let blur = src === lowQualitySrc;
+  return [src, blur];
 };

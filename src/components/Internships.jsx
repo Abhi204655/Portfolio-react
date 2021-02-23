@@ -1,7 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useProgressiveImg } from "../hooks";
 import Decartem from "../assets/InternshipImages/decartem.png";
+import DecartemTiny from "../assets/InternshipImages/decartem-tiny.png";
 import HashBinary from "../assets/InternshipImages/hashBinary.png";
+import HashBinaryTiny from "../assets/InternshipImages/hashBinary-tiny.png";
 import { CgArrowLongRight } from "react-icons/cg";
 import CarnotLogo from "../assets/CompanyLogos/carnot-logo.png";
 
@@ -86,6 +89,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Internships = () => {
   const classes = useStyles();
+  const [src1, blur1] = useProgressiveImg(HashBinaryTiny, HashBinary);
+  const [src2, blur2] = useProgressiveImg(DecartemTiny, Decartem);
   return (
     <div className={classes.section}>
       <div className={classes.header}>
@@ -120,13 +125,20 @@ const Internships = () => {
       <div className={classes.internship}>
         <div className={classes.companyImage}>
           <a href="https://hashbinary.com/" target="_blank" rel="noreferrer">
-            <img src={HashBinary} alt="decartem" />
+            <img
+              src={src1}
+              style={{
+                filter: blur1 ? "blur(20px)" : "none",
+                transition: blur1 ? "none" : "filter 0.3s ease-out",
+              }}
+              alt="decartem"
+            />
           </a>
         </div>
         <div className={classes.companyDisc}>
           <h1>Hashbinary Services LLP</h1>
           <p className={classes.time}>
-            Aug 2020 - Oct 2020 |
+            Aug 2020 - Oct 2020 |{" "}
             <span className={classes.role}>MERN Stack Developer</span>
           </p>
           <p className={classes.desc}>
@@ -140,26 +152,26 @@ const Internships = () => {
             <CgArrowLongRight /> Worked on their Concorde Project and built APIs
             used for the tracking and analysis of the user's behaviour with the
             Router.
-            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus aliquam eaque voluptate doloremque at culpa iste
-            perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
-            pariatur ad laudantium. Neque odit iure provident maxime distinctio
-            vitae velit laudantium nihil. Culpa praesentium numquam quasi
-            cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate. */}
           </p>
         </div>
       </div>
       <div className={classes.internship}>
         <div className={classes.companyImage}>
           <a href="https://decartem.com/" target="_blank" rel="noreferrer">
-            <img src={Decartem} alt="decartem" />
+            <img
+              src={src2}
+              style={{
+                filter: blur2 ? "blur(20px)" : "none",
+                transition: blur2 ? "none" : "filter 0.3s ease-out",
+              }}
+              alt="decartem"
+            />
           </a>
         </div>
         <div className={classes.companyDisc}>
           <h1>Decartem</h1>
           <p className={classes.time}>
-            Apr 2020 - Aug 2020 |
+            Apr 2020 - Aug 2020 |{" "}
             <span className={classes.role}>Full Stack Developer</span>
           </p>
           <p className={classes.desc}>
