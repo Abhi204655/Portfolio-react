@@ -1,13 +1,14 @@
 import React from "react";
-import ProfilePhoto from "../assets/Profile-Image@2x.png";
+// import ProfilePhoto from "../assets/Profile-Image@2x.png";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { saveAs } from "file-saver";
 import Resume from "../assets/Abhi-Resume.pdf";
 import { CgArrowLongRight } from "react-icons/cg";
 import { AiOutlineDownload } from "react-icons/ai";
-
-// import { useProgressiveImg } from "../hooks";
+import ProfileBig from "../assets/Profile-Image-Big.png";
+import ProfileTiny from "../assets/Profile-Image-tiny.png";
+import { useProgressiveImg } from "../hooks";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -124,10 +125,7 @@ const useStyles = makeStyles((theme) => ({
 const Hero = () => {
   const classes = useStyles();
   const history = useHistory();
-  //   const [src, { blur }] = useProgressiveImg(
-  //     "./assets/Profile-thumbnail.png",
-  //     "./assets/Profile-Image@2x.png"
-  //   );
+  const [src, { blur }] = useProgressiveImg(ProfileTiny, ProfileBig);
 
   const downloadResume = () => {
     let filename = "Abhi-Resume.pdf";
@@ -155,7 +153,14 @@ const Hero = () => {
         </div>
       </div>
       <div className={classes.heroRight}>
-        <img src={ProfilePhoto} alt="profile" />
+        <img
+          src={src}
+          style={{
+            filter: blur ? "blur(20px)" : "none",
+            transition: blur ? "none" : "filter 0.3s ease-out",
+          }}
+          alt="profile"
+        />
       </div>
     </div>
   );
