@@ -2,11 +2,13 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CodeStock from "../assets/Projects/codestock.png";
 import RecipeHunt from "../assets/Projects/recipeHunt.png";
+import RecipeHuntTiny from "../assets/Projects/recipeHuntTiny.png";
 import TypingGame from "../assets/Projects/typingGame.png";
 import { useHistory, useLocation } from "react-router-dom";
 import { CgArrowLongRight } from "react-icons/cg";
 import { AiFillGithub } from "react-icons/ai";
 import { FaFirefoxBrowser } from "react-icons/fa";
+import { useProgressiveImg } from "../hooks";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -128,6 +130,7 @@ const Projects = () => {
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
+  const [src, blur] = useProgressiveImg(RecipeHuntTiny, RecipeHunt);
   return (
     <div className={classes.section}>
       <div className={classes.header}>
@@ -219,7 +222,14 @@ const Projects = () => {
       </div>
       <div className={classes.internship}>
         <div className={classes.companyImage}>
-          <img src={RecipeHunt} alt="recipehunt" />
+          <img
+            src={src}
+            style={{
+              filter: blur ? "blur(20px)" : "none",
+              transition: blur ? "none" : "filter 0.3s ease-out",
+            }}
+            alt="recipehunt"
+          />
         </div>
         <div className={classes.companyDisc}>
           <h1>RecipeHunt</h1>
