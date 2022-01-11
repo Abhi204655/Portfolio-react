@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Screens/Home";
 import Experience from "./Screens/Experience";
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import ProjectScreen from "./Screens/ProjectScreen";
@@ -35,28 +36,44 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <>
+    <ParallaxProvider>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Router>
           <div className="main">
-            <div className="container">
+            <div className="wrapper">
               <Navbar />
-              <Switch>
-                <Route exact path="/" render={() => <Home />} />
-                <Route
-                  exact
-                  path="/projects"
-                  render={() => <ProjectScreen />}
-                />
-                <Route exact path="/experience" render={() => <Experience />} />
-              </Switch>
+              <div className="container">
+                <Switch>
+                  <Route exact path="/" render={() => <Home />} />
+                  <Route
+                    exact
+                    path="/projects"
+                    render={() => <ProjectScreen />}
+                  />
+                  <Route
+                    exact
+                    path="/experience"
+                    render={() => <Experience />}
+                  />
+                </Switch>
+              </div>
+              <Footer />
             </div>
-            <Footer />
+            <Parallax
+              className="backdrop-shape"
+              y={[-50, 20]}
+              tagOuter="figure"
+            ></Parallax>
+            <Parallax
+              className="backdrop-shape-3"
+              y={[-50, 20]}
+              tagOuter="figure"
+            ></Parallax>
           </div>
         </Router>
       </ThemeProvider>
-    </>
+    </ParallaxProvider>
   );
 }
 

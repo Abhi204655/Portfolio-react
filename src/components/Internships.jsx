@@ -109,16 +109,15 @@ const Internships = () => {
           <h1>Carnot Technologies</h1>
           <p className={classes.time}>
             Oct 2020 - Present |{" "}
-            <span className={classes.role}>Full Stack Intern</span>
+            <span className={classes.role}>Full Stack Developer</span>
           </p>
           <p className={classes.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus aliquam eaque voluptate doloremque at culpa iste
-            perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
-            pariatur ad laudantium. Neque odit iure provident maxime distinctio
-            vitae velit laudantium nihil. Culpa praesentium numquam quasi
-            cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate.
+            Carnot is an AI enabled Agri IOT platform. Supported by Qualcomm.
+            Raised Series B from Mahindra & Whiteboard capital.
+            <br />
+            <CgArrowLongRight /> Worked on the official website of Carnot and
+            built multiple internal dashboards.
+            <br />
           </p>
         </div>
       </div>

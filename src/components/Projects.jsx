@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CodeStock from "../assets/Projects/codestock.png";
+import GraphZen from "../assets/Projects/graph-zen.png";
 import RecipeHunt from "../assets/Projects/recipeHunt.png";
 import RecipeHuntTiny from "../assets/Projects/recipeHuntTiny.png";
 import TypingGame from "../assets/Projects/typingGame.png";
@@ -139,6 +140,40 @@ const Projects = () => {
       </div>
       <div className={classes.internship}>
         <div className={classes.companyImage}>
+          <img src={GraphZen} alt="graph-zen" />
+        </div>
+        <div className={classes.companyDisc}>
+          <h1>Graph-Zen</h1>
+          <div className={classes.tags}>
+            <span>React Js</span>
+            <span>Antd</span>
+            <span>Firebase</span>
+            <span>Scss</span>
+          </div>
+          <p className={classes.desc}>
+            <CgArrowLongRight /> A Portal where you can build multilayer charts
+            by uploading data through excel/csv. <br />
+            <CgArrowLongRight /> You can also download the chart as png or embed
+            these interactive charts in tools like notion/medium.
+            <br />
+          </p>
+          <div className={classes.links}>
+            <a
+              href="https://github.com/Abhi204655/graph-zen"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub size={20} /> Github Link
+            </a>
+            <a href="https://graph-zen.ml/" target="_blank" rel="noreferrer">
+              <FaFirefoxBrowser size={17} />
+              Live Link
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className={classes.internship}>
+        <div className={classes.companyImage}>
           <img src={CodeStock} alt="codestock" />
         </div>
         <div className={classes.companyDisc}>
@@ -192,13 +227,10 @@ const Projects = () => {
             <span>CSS3</span>
           </div>
           <p className={classes.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus aliquam eaque voluptate doloremque at culpa iste
-            perspiciatis minus. Ipsam dignissimos doloremque, eligendi autem
-            pariatur ad laudantium. Neque odit iure provident maxime distinctio
-            vitae velit laudantium nihil. Culpa praesentium numquam quasi
-            cupiditate nisi optio, quaerat minus aliquam quod provident incidunt
-            voluptate.
+            <CgArrowLongRight /> Online Typing Game where one can improve
+            his/her typing skills. <br />
+            <CgArrowLongRight /> Built a typing mechanism from the ground up and
+            learnt a lot of new things while doing this project.
           </p>
           <div className={classes.links}>
             <a
@@ -220,62 +252,65 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <div className={classes.internship}>
-        <div className={classes.companyImage}>
-          <img
-            src={src}
-            style={{
-              filter: blur ? "blur(20px)" : "none",
-              transition: blur ? "none" : "filter 0.3s ease-out",
-            }}
-            alt="recipehunt"
-          />
-        </div>
-        <div className={classes.companyDisc}>
-          <h1>RecipeHunt</h1>
-          <div className={classes.tags}>
-            <span>React Js</span>
-            <span>CSS3</span>
-            <span>JSX</span>
-            <span>Edamam Api</span>
+
+      {location.pathname === "/projects" && (
+        <div className={classes.internship}>
+          <div className={classes.companyImage}>
+            <img
+              src={src}
+              style={{
+                filter: blur ? "blur(20px)" : "none",
+                transition: blur ? "none" : "filter 0.3s ease-out",
+              }}
+              alt="recipehunt"
+            />
           </div>
-          <p className={classes.desc}>
-            <CgArrowLongRight /> React PWA and search engine where you can
-            search for different Recipes by recipe name/type/ingredient which is
-            powered by Edamam Recipe API.
-          </p>
-          <div className={classes.links}>
-            <a
-              href="https://github.com/Abhi204655/RecipeHunt"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillGithub size={20} />
-              Github Link
-            </a>
-            <a
-              href="https://recipehunt-abhi204655.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFirefoxBrowser size={17} />
-              Live Link
-            </a>
+          <div className={classes.companyDisc}>
+            <h1>RecipeHunt</h1>
+            <div className={classes.tags}>
+              <span>React Js</span>
+              <span>CSS3</span>
+              <span>JSX</span>
+              <span>Edamam Api</span>
+            </div>
+            <p className={classes.desc}>
+              <CgArrowLongRight /> React PWA and search engine where you can
+              search for different Recipes by recipe name/type/ingredient which
+              is powered by Edamam Recipe API.
+            </p>
+            <div className={classes.links}>
+              <a
+                href="https://github.com/Abhi204655/RecipeHunt"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub size={20} />
+                Github Link
+              </a>
+              <a
+                href="https://recipehunt-abhi204655.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFirefoxBrowser size={17} />
+                Live Link
+              </a>
+            </div>
           </div>
         </div>
-        {location.pathname === "/" && (
-          <button
-            className={classes.viewall}
-            onClick={() => {
-              history.push("/projects");
-              window.scrollTo(0, 0);
-            }}
-          >
-            VIEW ALL PROJECTS
-            <CgArrowLongRight size={23} />
-          </button>
-        )}
-      </div>
+      )}
+      {location.pathname === "/" && (
+        <button
+          className={classes.viewall}
+          onClick={() => {
+            history.push("/projects");
+            window.scrollTo(0, 0);
+          }}
+        >
+          VIEW ALL PROJECTS
+          <CgArrowLongRight size={23} />
+        </button>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { CgArrowLongRight } from "react-icons/cg";
 
 const useStyles = makeStyles((theme) => ({
   work: {
@@ -23,18 +24,22 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   outlined: {
-    width: "200px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "230px",
     lineHeight: "40px",
     background: "none",
     outline: "none",
     color: theme.palette.white.main,
     cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "1em",
+    gap: ".5em",
     border: `1px solid ${theme.palette.gray.main} !important`,
     fontWeight: "600 !important",
+    "& > a": {
+      textDecoration: "none",
+      color: "inherit",
+    },
     "&:hover": {
       background: theme.palette.secondary.main,
       color: theme.palette.primary.main,
@@ -50,7 +55,15 @@ const Work = () => {
       <h1>Interested in working together?</h1>
       <p>Feel free to contact me for any project or collaboration.</p>
       <button type="button" className={classes.outlined}>
-        BOOK A FREE CALL
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=ahrefabhi@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CONTACT ME ANYTIME
+        </a>
+
+        <CgArrowLongRight size={23} />
       </button>
     </div>
   );
